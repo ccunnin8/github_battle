@@ -1,0 +1,9 @@
+
+<div class="container">
+  <h1>Product details</h1>
+  <p *ngIf="product.qty === 0">To delet a product, the Qty must be 0</p>
+  <p><strong>Name: </strong>{{ product.name}}</p>
+  <p><strong>Qty: </strong>{{ product.qty }}</p>
+  <p><strong>Price: </strong>{{ product.price | currency:'USD'}}</p>
+  <a [routerLink]="['']">back</a><a (click)="delete()">Delete</a>
+</div>

@@ -1,0 +1,21 @@
+input {
+  width: 150px;
+}
+form {
+  text-align: right;
+  width: 300px;
+}
+input[type="submit"],button {
+  width: 50%;
+}
+li {
+  list-style-type: none;
+  color: blue;
+}
+p.error {
+  display: hidden;
+}
+
+.show {
+  display: inherit;
+}

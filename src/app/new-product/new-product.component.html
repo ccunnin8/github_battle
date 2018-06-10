@@ -1,0 +1,31 @@
+<a [routerLink]="['']">back</a>
+<div class="container">
+  <h1>New Product</h1>
+  <ul>
+    <li *ngIf="name.errors">Products must contain a Name</li>
+    <li *ngIf="qty.errors">Producs must contain a QTY</li>
+    <li *ngIf="price.errors">Products must contain a Price</li>
+  </ul>
+  <form (submit)=newProduct($event) #form="ngForm" >
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="name" required minlength="3"
+      #name="ngModel" [(ngModel)]="product.name">
+    </div>
+    <div>
+      <label for="qty">Qty: </label>
+      <input type="number" name="qty" id="qty" min="0" max="999" required
+      #qty="ngModel" [(ngModel)]="product.qty">
+    </div>
+    <div>
+      <label for="price">Price: </label>
+      <input type="number" name="price" id="price"  required min="0.01"
+      #price="ngModel" [(ngModel)]="product.price" >
+    </div>
+    <div>
+      <button (click)="resetForm($event)">Reset</button>
+      <input type="submit" value="Create" [disabled]="!form.valid">
+    </div>
+  </form>
+
+</div>
