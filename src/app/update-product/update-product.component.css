@@ -1,0 +1,28 @@
+input {
+  width: 150px;
+}
+form {
+  text-align: right;
+  width: 300px;
+}
+input[type="submit"]{
+  background-color: lightgreen;
+}
+li {
+  list-style-type: none;
+  color: blue;
+}
+p.error {
+  display: hidden;
+}
+
+.show {
+  display: inherit;
+}
+.container {
+  border: 1px solid black;
+  padding: 20px;
+}
+.buttons >  {
+  width: 50%;
+}

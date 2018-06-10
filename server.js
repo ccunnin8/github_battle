@@ -6,7 +6,7 @@ const port = process.env.PORT || 8000;
 
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
-app.use("/",express.static(path.join(__dirname + "/dist/commerce")));
+app.use("/",express.static(path.join(__dirname + "/dist")));
 
 
 require("./server/config/database");

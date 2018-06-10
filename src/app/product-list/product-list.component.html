@@ -1,9 +1,11 @@
+<p *ngIf="errors">{{ errors }}</p>
+
 <div class="product-list">
   <nav>
     <h1>Product List</h1>
-    <a [routerLink]="['/products/new']"><button>Add New Product</button></a>
+    <a [routerLink]="['/products/new']" class="float-right"><button>Add New Product</button></a>
   </nav>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <td>id</td>
@@ -15,13 +17,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <td>{{ product._id }}</td>
+        <td>{{ product._id + 1}}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.qty }}</td>
-        <td>{{ product.price | currency:'usd' }}</td>
+        <td>{{ product.price | currency: '$' : 2 }}</td>
         <td>
-          <a [routerLink]="['/products',product.id,'edit']"><button>Edit</button></a>
-          <a [routerLink]="['/products',product.id]"><button>Details</button></a>
+          <a [routerLink]="['/products',product._id,'edit']"><button>Edit</button></a>
+          <a [routerLink]="['/products',product._id]"><button>Details</button></a>
         </td>
       </tr>
     </tbody>

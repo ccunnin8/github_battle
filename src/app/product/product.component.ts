@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product';
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -10,15 +9,18 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
   product: Product;
-  constructor(private data: DataService) { }
+  constructor(private data: DataService, private router: ActivatedRoute, private route: Router) {
+    this.data.product.subscribe(x => this.product = x);
+  }
 
   ngOnInit() {
-    //get id from params
-    //get product data from api
+
+    this.router.paramMap.subscribe(params => this.data.get_product(params.get('id') ));
   }
 
   delete() {
     console.log("delete item");
-    //use data service to delete product 
+    this.data.delete_product(this.product['_id']);
+    this.route.navigate(['']);
   }
 }

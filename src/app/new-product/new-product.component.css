@@ -8,6 +8,9 @@ form {
 input[type="submit"],button {
   width: 50%;
 }
+input[type="submit"]{
+  background-color: lightblue;
+}
 li {
   list-style-type: none;
   color: blue;
@@ -18,4 +21,11 @@ p.error {
 
 .show {
   display: inherit;
+}
+.container {
+  border: 1px solid black;
+  padding: 20px;
+}
+.buttons >  {
+  width: 50%;
 }

@@ -1,0 +1,19 @@
+h1 {
+  display: inline-block;
+}
+nav button {
+  display: inline-block;
+  margin-left: 40px;
+}
+nav {
+  margin-bottom: 30px;
+}
+
+thead {
+  background-color: lightgrey;
+}
+
+.product-list {
+  border: 1px solid black;
+  padding: 20px;
+}
